@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Learning jQuery...</title>
+		<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("#ajaxlink").click(function(evento){
+				evento.preventDefault();
+				$("#destino").load("../php/recibeParametros.php",{nombre:"iovas",edad:28}, function(){
+					alert("Datos recibidos por ajax...");
+				});
+			});
+		});
+		</script>
+	</head>
+	<body>
+		<h3>Pasar parámetros y ejecutar acciones después de la llamada a Ajax</h3>
+		<a id="ajaxlink" href="#">Click para cargar...</a>
+		<hr/>
+		<div id="destino"></div>
+	</body>
+</html>
